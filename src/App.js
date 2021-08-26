@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState }  from 'react';
+import axios from 'axios';
+import styles from './App.module.css';
+import CountriesTable from './components/CountriesTable/CountriesTable';
 
-function App() {
+const App = () => {
+
+  const [ countries, setCountries ] = useState([]);
+
+  useEffect(() => {
+    fetchCountries();
+  })
+
+  const fetchCountries = async () => {
+    const url = 'https://restcountries.eu/rest/v2/all?fields=name;region;area;population;languages';
+    try {
+      const countries = await axios.get(url, {timeout: 5000});
+      setCountries(countries.data)
+    } catch (error) {
+      console.log('Error ', error)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={styles.App}>
+      <header>
+        <h1>List of coutries</h1>
       </header>
+      <CountriesTable countries={countries} />
     </div>
   );
 }

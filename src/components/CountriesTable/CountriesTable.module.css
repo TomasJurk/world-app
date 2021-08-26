@@ -1,0 +1,46 @@
+.TableWrapper {
+    /* height: 40rem;
+  max-height: 70wh; */
+  overflow: auto;
+  /* continue here, make table header sticky */
+}
+
+.CountriesTable {
+  border: 1px solid #000000;
+  width: 40rem;
+  max-width: 95vw;
+  text-align: right;
+  border-collapse: collapse;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+.CountriesTable td,
+.CountriesTable th {
+  border: 1px solid #000000;
+  padding: 0.2rem;
+}
+.CountriesTable tbody td {
+  font-size: 1rem;
+}
+.CountriesTable thead {
+  background: #cfcfcf;
+  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  border-bottom: 1px solid #000000;
+}
+.CountriesTable thead th {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .CountriesTable thead th {
+    font-size: 1rem;
+  }
+  .CountriesTable tbody td {
+    font-size: 0.85rem;
+  }
+}
