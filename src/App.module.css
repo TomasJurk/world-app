@@ -2,15 +2,12 @@
   min-height: 100vh;
   background-color: rgb(var(--backClr));
 }
-
 header {
   padding: 2rem 0;
 }
-
 h1 {
   text-align: center;
 }
-
 .SortingContainer {
   margin: 1rem auto;
   width: 40rem;
@@ -19,7 +16,6 @@ h1 {
   justify-content: flex-end;
   font-size: .9rem;
 }
-
 .SortingContainer select {
   width: 7rem;
   padding: .2rem;

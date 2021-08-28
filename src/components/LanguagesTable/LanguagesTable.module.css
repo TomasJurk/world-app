@@ -1,3 +1,9 @@
+.LanguagesList {
+    padding-bottom: 4rem;
+}
+.LanguagesList h2 {
+    text-align: center;
+}
 .TableWrapper {
   overflow-y: auto;
   width: fit-content;
@@ -5,27 +11,27 @@
   height: 40.5rem;
   max-height: 60vh;
 }
-.CountriesTable {
+.LanguagesTable {
   width: 40rem;
   max-width: 90vw;
-  text-align: right;
+  text-align: center;
   border-collapse: collapse;
   margin: 0 auto;
   table-layout: fixed;
   background-color: white;
 }
-.CountriesTable thead {
+.LanguagesTable thead {
   background-color: rgb(var(--baseClr));
   position: sticky;
   top: 0;
 }
-.CountriesTable th {
+.LanguagesTable th {
   font-size: 1.1rem;
   font-weight: bold;
   color: rgb(var(--backClr));
 }
-.CountriesTable th:after,
-.CountriesTable th:before {
+.LanguagesTable th:after,
+.LanguagesTable th:before {
   content: '';
   position: absolute;
   left: 0;
@@ -33,29 +39,29 @@
   height: 1px;
   background-color: black;
 }
-.CountriesTable th:before {
+.LanguagesTable th:before {
   top: 0;
 }
-.CountriesTable th:after {
+.LanguagesTable th:after {
   bottom: 0;
 }
-.CountriesTable td,
-.CountriesTable th {
+.LanguagesTable td,
+.LanguagesTable th {
   padding: 0.2rem;
 }
-.CountriesTable tr:nth-child(even) {
-  background-color: rgba(var(--baseClr), .15);
+.LanguagesTable tr:nth-child(even) {
+  background-color: rgba(var(--baseClr), 0.15);
 }
-.CountriesTable td {
+.LanguagesTable td {
   font-size: 1rem;
 }
 
 @media (max-width: 640px) {
-  .CountriesTable thead th {
-    font-size: .95rem;
+  .LanguagesTable thead th {
+    font-size: 0.95rem;
     font-weight: normal;
   }
-  .CountriesTable tbody td {
+  .LanguagesTable tbody td {
     font-size: 0.85rem;
   }
 }

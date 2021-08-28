@@ -1,0 +1,14 @@
+.Summary {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 40rem;
+  max-width: 90vw;
+}
+.Summary li {
+  margin-bottom: 0.5rem;
+}
+.Summary span {
+  text-decoration: underline;
+  font-weight: bold;
+}
