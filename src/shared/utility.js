@@ -81,23 +81,22 @@ export const calculateSummaryFacts = countries => {
 };
 
 export const filterLanguages = countries => {
+  const filteredByLanguages = {};
 
-    const filteredByLanguages = {};
+  for (let i = 0; i < countries.length; i++) {
+    countries[i].languages.forEach(lang => {
+      if (!filteredByLanguages.hasOwnProperty(lang.iso639_2)) {
+        filteredByLanguages[lang.iso639_2] = {};
+        filteredByLanguages[lang.iso639_2].countries = [];
+        filteredByLanguages[lang.iso639_2].countries.push(countries[i].name);
+        filteredByLanguages[lang.iso639_2].totalSpeakers = countries[i].population;
+        filteredByLanguages[lang.iso639_2].name = lang.name;
+      } else {
+        filteredByLanguages[lang.iso639_2].countries.push(countries[i].name);
+        filteredByLanguages[lang.iso639_2].totalSpeakers += countries[i].population;
+      }
+    });
+  }
 
-    for (let i = 0; i < countries.length; i++) {
-        countries[i].languages.forEach(lang => {
-            if (!filteredByLanguages.hasOwnProperty(lang.iso639_2)) {
-                filteredByLanguages[lang.iso639_2] = {};
-                filteredByLanguages[lang.iso639_2].countries = [];
-                filteredByLanguages[lang.iso639_2].countries.push(countries[i].name);
-                filteredByLanguages[lang.iso639_2].totalSpeakers = countries[i].population;
-                filteredByLanguages[lang.iso639_2].name = lang.name;
-            } else {
-                filteredByLanguages[lang.iso639_2].countries.push(countries[i].name);
-                filteredByLanguages[lang.iso639_2].totalSpeakers += countries[i].population;
-            }
-        });
-    }
-
-    return filteredByLanguages;
+  return filteredByLanguages;
 };
